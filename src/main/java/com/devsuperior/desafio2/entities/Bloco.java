@@ -27,7 +27,7 @@ public class Bloco {
 	private Instant fim;
 	
 	@ManyToOne
-	@JoinColumn(name = "atividade_id")
+	@JoinColumn(name = "atividade_id", nullable = false)
 	private Atividade atividade;
 	
 	public Bloco() {
@@ -62,6 +62,10 @@ public class Bloco {
 
 	public void setFim(Instant fim) {
 		this.fim = fim;
+	}
+	
+	public Atividade getAtividade() {
+		return atividade;
 	}
 
 	@Override
